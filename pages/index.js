@@ -6,6 +6,24 @@ import Moment from 'react-moment'
 
 import { getRecentWritings, getRecentProjects } from '@/lib/cms'
 
+const links = [
+  {
+    id: 0,
+    name: "Twitter",
+    url: "https://twitter.com/hrqsn"
+  },
+  {
+    id: 1,
+    name: "GitHub",
+    url: "https://github.com/hrqsn"
+  },
+  {
+    id: 2,
+    name: "YouTube",
+    url: "https://www.youtube.com/channel/UCGVZESnjE79XBgV9LMZls2g"
+  }
+]
+
 export default function Home ({ writings = [], projects = [] }) {
   return (
     <>
@@ -25,6 +43,16 @@ export default function Home ({ writings = [], projects = [] }) {
             </div>
           </div>
           <p className='mt-6'>Webエンジニア、学生。<br />気ままにWebサービスをつくっています。<br />Minecraftで東京ディズニーリゾート®︎を再現するプロジェクト <a href='https://twitter.com/tdr_mcpe_server' target='_blank' rel='noopener noreferrer' className='mt-1 underline text-gray-600'>Imagination Server</a> 共同創始者。<br />アニメとジェットコースターが好き。最近ギターを始めました。</p>
+        </div>
+        <div className='mt-16'>
+          <h1 className='text-xl font-semibold'>Links</h1>
+          <div className='my-5 space-y-4'>
+            {links.map((link, i) => (
+              <p key={i}>
+                <a href={link.url} className='underline text-gray-600' target='_blank' rel='noopener noreferrer'>{link.name}</a>
+              </p>
+            ))}
+          </div>
         </div>
         <div className='mt-16'>
           <h1 className='text-xl font-semibold'>Projects</h1>
