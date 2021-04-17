@@ -21,7 +21,7 @@ export default function Projects ({ projects = [] }) {
           <div className='my-5 space-y-4'>
           {projects.map((project, i) => (
             <Link href={`/projects/[slug]`} as={`/projects/${project.fields.slug}`} key={i}>
-              <a>
+              <a className='block'>
                 <div key={i}>
                   <h1 className='font-semibold'>{project.fields.title}</h1>
                   <p className='mt-1 text-sm text-gray-600'>{project.fields.subtitle}</p>

@@ -21,7 +21,7 @@ export default function Writings ({ writings = [] }) {
           <div className='my-5 space-y-4'>
           {writings.map((writing, i) => (
             <Link href={`/writing/[slug]`} as={`/writing/${writing.fields.slug}`} key={i}>
-              <a>
+              <a className='block'>
                 <div>
                   <h1 className='font-semibold'>{writing.fields.title}</h1>
                   <p className='mt-1 text-sm text-gray-600'>{writing.fields.subtitle}</p>

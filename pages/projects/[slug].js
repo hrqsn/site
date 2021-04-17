@@ -26,6 +26,7 @@ export default function Project ({ post }) {
             <a className='text-gray-600'>← Projects</a>
           </Link>
           <h1 className='mt-4 text-xl font-semibold'>{post.fields.title}</h1>
+          <a href={post.fields.link} target='_blank' rel='noopener noreferrer' className='block underline mt-2 text-sm text-gray-600'>{post.fields.link}</a>
           <div className='mt-6'>
             <WritingBody content={post.fields.body} />
           </div>
