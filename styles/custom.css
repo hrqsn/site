@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+html, body, #__next {
+	@apply w-full h-full bg-white text-gray-900;
+}
+
+@layer components {
+  button, a {
+    @apply focus:outline-none;
+  }
+
+  .nav-scroll {
+    position: relative;
+    box-sizing: content-box;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .nav-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-scroll > * {
+    flex-shrink: 0;
+  }
+  
+  .footer-item {
+    @apply mx-3 mb-2 hover:underline;
+  }
+}
+
+@layer utilities {
+  a {
+    cursor: pointer;
+  }
+}

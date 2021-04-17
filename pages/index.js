@@ -1,65 +1,75 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Link from 'next/link'
+import Header from '@/components/header'
+import Footer from '@/components/footer'
+import Moment from 'react-moment'
 
-export default function Home() {
+import { getRecentWritings, getRecentProjects } from '@/lib/cms'
+
+export default function Home ({ writings = [], projects = [] }) {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Home | Hal Sakuragi</title>
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <Header />
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <main className='max-w-screen-md mx-auto px-4'>
+        <div className='mt-10'>
+          <div className='flex items-center'>
+            <img src='/img/icon.png' alt='icon' className='w-20 h-20 rounded-full border border-gray-200' />
+            <div className='ml-6'>
+              <h1 className='text-lg font-semibold'>のーさ</h1>
+              <a href='https://twitter.com/hrqsn' target='_blank' rel='noopener noreferrer' className='mt-1 text-sm text-gray-600'>@hrqsn</a>
+            </div>
+          </div>
+          <p className='mt-6'>Webエンジニア, 学生.<br />気ままにWebサービスをつくっています.<br />Minecraftで東京ディズニーリゾート®︎を再現するプロジェクト <a href='https://twitter.com/tdr_mcpe_server' target='_blank' rel='noopener noreferrer' className='mt-1 underline text-gray-600'>Imagination Server</a> 共同創始者.<br />アニメとジェットコースターが好き. 最近ギターを始めました.</p>
+        </div>
+        <div className='mt-16'>
+          <h1 className='text-xl font-semibold'>Projects</h1>
+          <div className='my-5 space-y-4'>
+            {projects.map((project, i) => (
+              <div key={i}>
+                <h1 className='font-semibold'>{project.fields.title}</h1>
+                <p className='mt-1 text-sm text-gray-600'>{project.fields.subtitle}</p>
+              </div>
+            ))}
+          </div>
+          <Link href='/projects'>
+            <a className='text-sm'>もっと見る →</a>
+          </Link>
+        </div>
+        <div className='mt-16'>
+          <h1 className='text-xl font-semibold'>Writing</h1>
+          <div className='my-5 space-y-4'>
+          {writings.map((writing, i) => (
+            <div key={i}>
+              <h1 className='font-semibold'>{writing.fields.title}</h1>
+              <p className='mt-1 text-sm text-gray-600'>{writing.fields.subtitle}</p>
+              <p className='mt-1.5 text-sm text-gray-400'><Moment format="YYYY-MM-DD HH:mm">{writing.fields.date}</Moment></p>
+            </div>
+          ))}
+          </div>
+          <Link href='/writing'>
+            <a className='text-sm'>もっと見る →</a>
+          </Link>
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+      <Footer />
+    </>
   )
+}
+
+export async function getStaticProps () {
+  const recentWritings = await getRecentWritings()
+  const recentProjects = await getRecentProjects()
+
+  return {
+    props: {
+      writings: recentWritings,
+      projects: recentProjects
+    }
+  }
 }
