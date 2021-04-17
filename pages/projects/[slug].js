@@ -23,7 +23,7 @@ export default function Project ({ post }) {
       <div className='max-w-screen-sm mx-auto px-4'>
         <div className='mt-16'>
           <Link href='/projects'>
-            <a className='text-sm text-gray-600'>← 戻る</a>
+            <a className='text-gray-600'>← Projects</a>
           </Link>
           <h1 className='mt-4 text-xl font-semibold'>{post.fields.title}</h1>
           <div className='mt-6'>

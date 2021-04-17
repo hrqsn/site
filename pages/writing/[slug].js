@@ -26,7 +26,7 @@ export default function Blog ({ post }) {
       <div className='max-w-screen-sm mx-auto px-4'>
         <div className='mt-16'>
           <Link href='/writing'>
-            <a className='text-sm text-gray-600'>← 戻る</a>
+            <a className='text-gray-600'>← Writing</a>
           </Link>
           <h1 className='mt-4 text-xl font-semibold'>{post.fields.title}</h1>
           <p className='mt-1 text-sm text-gray-600'><Moment format="YYYY-MM-DD HH:mm">{post.fields.date}</Moment></p>
