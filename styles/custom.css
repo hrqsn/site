@@ -37,4 +37,10 @@ html, body, #__next {
   a {
     cursor: pointer;
   }
+
+  p {
+    white-space: pre-wrap;
+    margin-top: 2rem;
+    line-height: 28px;
+  }
 }

@@ -24,7 +24,7 @@ export default function Home ({ writings = [], projects = [] }) {
               <a href='https://twitter.com/hrqsn' target='_blank' rel='noopener noreferrer' className='mt-1 text-sm text-gray-600'>@hrqsn</a>
             </div>
           </div>
-          <p className='mt-6'>Webエンジニア, 学生.<br />気ままにWebサービスをつくっています.<br />Minecraftで東京ディズニーリゾート®︎を再現するプロジェクト <a href='https://twitter.com/tdr_mcpe_server' target='_blank' rel='noopener noreferrer' className='mt-1 underline text-gray-600'>Imagination Server</a> 共同創始者.<br />アニメとジェットコースターが好き. 最近ギターを始めました.</p>
+          <p className='mt-6'>Webエンジニア、学生。<br />気ままにWebサービスをつくっています。<br />Minecraftで東京ディズニーリゾート®︎を再現するプロジェクト <a href='https://twitter.com/tdr_mcpe_server' target='_blank' rel='noopener noreferrer' className='mt-1 underline text-gray-600'>Imagination Server</a> 共同創始者。<br />アニメとジェットコースターが好き。最近ギターを始めました。</p>
         </div>
         <div className='mt-16'>
           <h1 className='text-xl font-semibold'>Projects</h1>
