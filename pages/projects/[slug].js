@@ -5,7 +5,7 @@ import Footer from '@/components/footer'
 import Moment from 'react-moment'
 
 import Error from 'next/error'
-import { getAllWritingsWithSlug, getWritingBySlug } from '@/lib/cms'
+import { getAllProjectsWithSlug, getProjectBySlug } from '@/lib/cms'
 
 export default function Blog ({ post }) {
   if (!post) {
@@ -25,15 +25,15 @@ export default function Blog ({ post }) {
 }
 
 export async function getStaticPaths() {
-  const posts = await getAllWritingsWithSlug()
+  const posts = await getAllProjectsWithSlug()
   return {
-    paths: posts.map(({ slug }) => `/writing/${slug}`) ?? [],
+    paths: posts.map(({ slug }) => `/projects/${slug}`) ?? [],
     fallback: true
   }
 }
 
 export async function getStaticProps ({ params }) {
-  const post = await getWritingBySlug(params.slug)
+  const post = await getProjectBySlug(params.slug)
   return {
     props: {
       post: post

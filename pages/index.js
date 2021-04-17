@@ -30,10 +30,14 @@ export default function Home ({ writings = [], projects = [] }) {
           <h1 className='text-xl font-semibold'>Projects</h1>
           <div className='my-5 space-y-4'>
             {projects.map((project, i) => (
-              <div key={i}>
-                <h1 className='font-semibold'>{project.fields.title}</h1>
-                <p className='mt-1 text-sm text-gray-600'>{project.fields.subtitle}</p>
-              </div>
+              <Link href={`/projects/[slug]`} as={`/projects/${project.fields.slug}`} key={i}>
+                <a>
+                  <div key={i}>
+                    <h1 className='font-semibold'>{project.fields.title}</h1>
+                    <p className='mt-1 text-sm text-gray-600'>{project.fields.subtitle}</p>
+                  </div>
+                </a>
+              </Link>
             ))}
           </div>
           <Link href='/projects'>
@@ -44,11 +48,15 @@ export default function Home ({ writings = [], projects = [] }) {
           <h1 className='text-xl font-semibold'>Writing</h1>
           <div className='my-5 space-y-4'>
           {writings.map((writing, i) => (
-            <div key={i}>
-              <h1 className='font-semibold'>{writing.fields.title}</h1>
-              <p className='mt-1 text-sm text-gray-600'>{writing.fields.subtitle}</p>
-              <p className='mt-1.5 text-sm text-gray-400'><Moment format="YYYY-MM-DD HH:mm">{writing.fields.date}</Moment></p>
-            </div>
+            <Link href={`/writing/[slug]`} as={`/writing/${writing.fields.slug}`} key={i}>
+              <a>
+                <div>
+                  <h1 className='font-semibold'>{writing.fields.title}</h1>
+                  <p className='mt-1 text-sm text-gray-600'>{writing.fields.subtitle}</p>
+                  <p className='mt-1.5 text-sm text-gray-400'><Moment format="YYYY-MM-DD HH:mm">{writing.fields.date}</Moment></p>
+                </div>
+              </a>
+            </Link>
           ))}
           </div>
           <Link href='/writing'>
