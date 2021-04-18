@@ -4,7 +4,7 @@ export default function ProjectsBody ({ coverImage, content }) {
   return (
     <div className='max-w-screen-sm mx-auto mt-8 '>
       <figure className='sm:-mx-4'>
-        <Image src={coverImage} alt="coverImage" width={1200} height={600} />
+        <Image src={coverImage} alt="coverImage" width={1200} height={600} className='rounded' />
       </figure>
       <div
         className='mt-8 prose'

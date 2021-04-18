@@ -7,11 +7,32 @@ ogImage:
   url: '/blog/hello-world/cover.jpg'
 ---
 
-ホームページを新設しました。
-色々とカスタマイズできていいですね。
+新生活を迎え、心機一転しようと個人サイトを新設しました。
+今のところ作品集とブログだけの小さなサイトですが、じっくりと育てていきます。
+ワクワク。
+
+## 使ったもの
+
+- React.js, Next.js
+  - Tailwind CSS
+  - マークダウン変換: [markdown-it](https://github.com/markdown-it/markdown-it/)
+- Figma
+  - ページのラフデザインとアイキャッチ画像の作成
+- Vercel
+
+## ブログ
+
+このブログはローカルのマークダウンをSSG（静的サイト生成）しています。
+もしかしたら任意のヘッドレスCMSを使うかもしれません。
 
 ## Lighthouse
 
-![Figma](/blog/hello-world/1.png)
+![Lighthouse](/blog/hello-world/1.png)
 
 やったぜ。
+
+### ソースコード
+
+[hrqsn/site](https://github.com/hrqsn/site/)
+
+プルリク等ご自由にどうぞ。
