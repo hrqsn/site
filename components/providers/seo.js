@@ -2,15 +2,15 @@ import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
 
 const SeoConfig = {
-  title: 'Hal Sakuragi',
-  description: 'Hal Sakuragi a.k.a. のーさのホームページ.',
+  title: 'Hal Sakuragi - のーさ',
+  description: 'Hal Sakuragi(のーさ)のホームページ。',
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
     url: 'https://halsakuragi.com',
-    site_name: 'Hal Sakuragi',
+    site_name: 'Hal Sakuragi - のーさ',
     title: 'Hal Sakuragi',
-    description: 'Hal Sakuragi a.k.a. のーさのホームページ.',
+    description: 'Hal Sakuragi(のーさ)のホームページ。',
     images: [
       {
         url: 'https://halsakuragi.com/img/cover.png',
