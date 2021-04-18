@@ -5,6 +5,7 @@ import Providers from '@/components/providers'
 import '@/styles/tailwind.css'
 import 'tailwindcss/utilities.css'
 import '@/styles/custom.css'
+import '@/styles/prose.css'
 import '@/styles/progress.css'
 
 NProgress.configure({ showSpinner: false })

@@ -1,0 +1,75 @@
+.prose {
+  @apply text-gray-900;
+}
+
+.prose blockquote {
+  @apply font-normal border-l-2 border-gray-200;
+}
+
+.prose figure {
+  @apply sm:-mx-4;
+}
+
+.prose img {
+  @apply w-full rounded-md;
+}
+
+.prose a {
+  @apply text-blue-700;
+}
+
+.prose table {
+  @apply text-gray-900;
+}
+
+.prose b,
+.prose strong {
+  @apply font-bold text-gray-900;
+}
+
+/* the kg-embed-card gets applied to iframes sent from Ghost. this preserves a good video aspect ratio */
+.prose .kg-embed-card {
+  @apply my-4;
+  position: relative;
+  padding-top: 56.25%;
+}
+
+.prose .kg-embed-card iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply font-bold;
+}
+
+.prose pre {
+  @apply px-8 py-6 space-y-4 text-sm text-gray-800 bg-gray-400 border-gray-300 rounded bg-opacity-5;
+}
+
+/* this is needed to avoid HN comments from overflowing off the right edge of the screen */
+.prose p {
+  @apply break-words;
+  word-break: break-word;
+}
+
+.prose p + p {
+  margin-top: 0;
+}
+
+.prose code {
+  @apply font-normal text-gray-800 px-2 py-1.5 border-gray-100 bg-gray-100;
+}
+
+.prose code,
+.prose pre {
+  @apply text-base;
+}
