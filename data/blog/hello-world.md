@@ -27,7 +27,7 @@ ogImage:
 
 ## Lighthouse
 
-![Lighthouse](/blog/hello-world/1.png)
+![Lighthouse](/blog/hello-world/0.png)
 
 やったぜ。
 

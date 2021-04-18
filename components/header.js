@@ -12,7 +12,9 @@ export default function Header () {
     <>
       <header className='max-w-screen-lg h-32 sm:h-20 mx-6 sm:mx-auto flex flex-col sm:flex-row justify-center sm:justify-between items-center px-4 space-y-4 sm:space-y-0'>
         <Link href='/'>
-          <a className='text-lg font-semibold'>Hal Sakuragi</a>
+          <a>
+            <img src='/img/logo.svg' alt='Hal Sakuragi' className='h-5' />
+          </a>
         </Link>
         <nav className='nav-scroll space-x-8 text-gray-600'>
           <Link href='/'>

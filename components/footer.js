@@ -1,13 +1,11 @@
 export default function Footer () {
   return (
     <>
-      <div>
-        <div className='max-w-screen-sm mx-auto px-4'>
-          <footer className='flex flex-col justify-center space-y-6 pt-48 pb-24'>
-            <span className='text-center text-sm text-gray-500'>©︎ {new Date().getFullYear()} Hal Sakuragi.</span>
-          </footer>
+      <footer className='max-w-screen-sm mx-auto px-4'>
+        <div className='flex flex-col justify-center space-y-6 pt-48 pb-24'>
+          <span className='text-center text-sm text-gray-500'>©︎ {new Date().getFullYear()} Hal Sakuragi.</span>
         </div>
-      </div>
+      </footer>
     </>
   )
 }
