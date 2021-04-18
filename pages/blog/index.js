@@ -18,7 +18,7 @@ export default function Writings ({ posts = [] }) {
       <main className='max-w-screen-sm mx-auto px-4'>
         <div className='mt-16'>
           <h1 className='text-xl font-semibold'>Blog</h1>
-          <div className='my-5 space-y-4'>
+          <div className='my-6 space-y-4'>
             {posts.map((post, i) => (
               <Link href='/blog/[slug]' as={`/blog/${post.slug}`} key={i}>
                 <a className='block'>

@@ -17,7 +17,7 @@ export default function Projects ({ posts = [] }) {
       <main className='max-w-screen-sm mx-auto px-4'>
         <div className='mt-16'>
           <h1 className='text-xl font-semibold'>Projects</h1>
-          <div className='my-5 space-y-4'>
+          <div className='my-6 space-y-4'>
             <ProjectsList items={posts} />
           </div>
         </div>

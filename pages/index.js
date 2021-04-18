@@ -47,7 +47,7 @@ export default function Home ({ blogs = [], projects = [] }) {
         </div>
         <div className='mt-16'>
           <h1 className='text-xl font-semibold'>Links</h1>
-          <div className='my-5 space-y-4'>
+          <div className='my-6 space-y-4'>
             {links.map((link, i) => (
               <p key={i}>
                 <a href={link.url} className='underline text-gray-600' target='_blank' rel='noopener noreferrer'>{link.name}</a>
@@ -57,7 +57,7 @@ export default function Home ({ blogs = [], projects = [] }) {
         </div>
         <div className='mt-16'>
           <h1 className='text-xl font-semibold'>Projects</h1>
-          <div className='my-5 space-y-4'>
+          <div className='my-6 space-y-4'>
             <ProjectsList items={projects} />
           </div>
           <Link href='/projects'>
@@ -66,7 +66,7 @@ export default function Home ({ blogs = [], projects = [] }) {
         </div>
         <div className='mt-16'>
           <h1 className='text-xl font-semibold'>Blog</h1>
-          <div className='my-5 space-y-4'>
+          <div className='my-6 space-y-4'>
             <BlogList items={blogs} />
           </div>
           <Link href='/blog'>

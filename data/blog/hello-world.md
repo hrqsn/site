@@ -14,10 +14,10 @@ ogImage:
 ## 使ったもの
 
 - React.js, Next.js
-  - Tailwind CSS
-  - マークダウン変換: [markdown-it](https://github.com/markdown-it/markdown-it/)
+  1. Tailwind CSS
+  2. マークダウン変換: [markdown-it](https://github.com/markdown-it/markdown-it/)
 - Figma
-  - ページのラフデザインとアイキャッチ画像の作成
+  1. ページのラフデザインとアイキャッチ画像の作成
 - Vercel
 
 ## ブログ
