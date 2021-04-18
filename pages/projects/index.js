@@ -1,12 +1,11 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import Moment from 'react-moment'
+import ProjectsList from '@/components/projects/projects-list'
 
-import { getProjects } from '@/lib/cms'
+import { getAllPosts } from '@/lib/api'
 
-export default function Projects ({ projects = [] }) {
+export default function Projects ({ posts = [] }) {
   return (
     <>
       <Head>
@@ -19,16 +18,7 @@ export default function Projects ({ projects = [] }) {
         <div className='mt-16'>
           <h1 className='text-xl font-semibold'>Projects</h1>
           <div className='my-5 space-y-4'>
-          {projects.map((project, i) => (
-            <Link href={`/projects/[slug]`} as={`/projects/${project.fields.slug}`} key={i}>
-              <a className='block'>
-                <div key={i}>
-                  <h1 className='font-semibold'>{project.fields.title}</h1>
-                  <p className='mt-1 text-sm text-gray-600'>{project.fields.subtitle}</p>
-                </div>
-              </a>
-            </Link>
-          ))}
+            <ProjectsList items={posts} />
           </div>
         </div>
       </main>
@@ -39,11 +29,17 @@ export default function Projects ({ projects = [] }) {
 }
 
 export async function getStaticProps () {
-  const projects = await getProjects()
+  const posts = await getAllPosts('projects', [
+    'title',
+    'subtitle',
+    'date',
+    'slug',
+  ])
 
   return {
     props: {
-        projects: projects
+      posts: posts
     }
   }
 }
+

@@ -6,10 +6,10 @@ import { getPostBySlug, getAllPosts } from '@/lib/api'
 
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import ProjectsHeader from '@/components/projects/projects-header'
-import ProjectsBody from '@/components/projects/projects-body'
+import BlogHeader from '@/components/blog/blog-header'
+import BlogBody from '@/components/blog/blog-body'
 
-export default function Project ({ post }) {
+export default function Blog ({ post }) {
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <Error statusCode={404} />
@@ -24,14 +24,12 @@ export default function Project ({ post }) {
       <Header />
 
       <article className='mt-16 max-w-screen-sm mx-auto px-4'>
-        <ProjectsHeader
+        <BlogHeader
           title={post.title}
-          url={post.url}
-        />
-        <ProjectsBody 
           coverImage={post.coverImage}
-          content={post.content} 
+          date={post.date}
         />
+        <BlogBody content={post.content} />
       </article>
 
       <Footer />
@@ -40,11 +38,11 @@ export default function Project ({ post }) {
 }
 
 export async function getStaticProps({ params }) {
-  const post = getPostBySlug('projects', params.slug, [
+  const post = getPostBySlug('blog', params.slug, [
     'title',
+    'date',
     'slug',
     'content',
-    'url',
     'ogImage',
     'coverImage',
   ])
@@ -61,7 +59,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts('projects', ['slug'])
+  const posts = getAllPosts('blog', ['slug'])
 
   return {
     paths: posts.map((post) => {

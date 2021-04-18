@@ -21,8 +21,8 @@ export default function Header () {
           <Link href='/projects'>
             <a className={activeNavItem('/projects')}>Projects</a>
           </Link>
-          <Link href='/writing'>
-            <a className={activeNavItem('/writing')}>Writing</a>
+          <Link href='/blog'>
+            <a className={activeNavItem('/blog')}>Blog</a>
           </Link>
         </nav>
       </header>

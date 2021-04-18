@@ -13,7 +13,7 @@ const SeoConfig = {
     description: 'Hal Sakuragi a.k.a. のーさのホームページ.',
     images: [
       {
-        url: 'https://halsakuragi.com/img/ogimg.png',
+        url: 'https://halsakuragi.com/img/cover.png',
         alt: 'Hal Sakuragi'
       }
     ]

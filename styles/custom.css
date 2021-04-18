@@ -43,4 +43,10 @@ html, body, #__next {
     margin-top: 2rem;
     line-height: 28px;
   }
+
+  .word-clamp {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
