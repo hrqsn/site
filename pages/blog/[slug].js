@@ -23,7 +23,7 @@ export default function Blog ({ post }) {
 
       <Header />
 
-      <article className='mt-16 max-w-screen-sm mx-auto px-4'>
+      <article className='mt-10 sm:mt-16 max-w-screen-sm mx-auto px-4'>
         <BlogHeader
           title={post.title}
           coverImage={post.coverImage}

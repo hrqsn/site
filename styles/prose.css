@@ -53,3 +53,9 @@
 .prose pre {
   @apply text-base;
 }
+
+.prose ul > li::before {
+  width: 0.325em;
+  height: 0.325em;
+  top: 0.675em;
+}

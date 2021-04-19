@@ -35,7 +35,7 @@ export default function Home ({ blogs = [], projects = [] }) {
       <Header />
 
       <main className='max-w-screen-md mx-auto px-4'>
-        <div className='mt-10'>
+        <div className='mt-10 sm:mt-16'>
           <div className='flex items-center'>
             <img src='/img/icon.png' alt='icon' className='w-20 h-20 rounded-full border border-gray-200' />
             <div className='ml-6'>
@@ -46,8 +46,8 @@ export default function Home ({ blogs = [], projects = [] }) {
           <p className='mt-6'>Web開発者、学生。<br />気ままにWebサービスをつくっています。<br />Minecraftで東京ディズニーリゾート®︎を再現するプロジェクト <a href='https://twitter.com/tdr_mcpe_server' target='_blank' rel='noopener noreferrer' className='mt-1 underline text-gray-600'>Imagination Server</a> 共同創始者。<br />アニメとジェットコースターが好き。最近ギターを始めました。</p>
         </div>
         <div className='mt-16'>
-          <h1 className='text-xl font-bold'>Links</h1>
-          <div className='my-6 space-y-4'>
+          <h1 className='text-xl font-semibold'>Links</h1>
+          <div className='my-6 flex space-x-4'>
             {links.map((link, i) => (
               <p key={i}>
                 <a href={link.url} className='underline text-gray-600' target='_blank' rel='noopener noreferrer'>{link.name}</a>
@@ -56,7 +56,7 @@ export default function Home ({ blogs = [], projects = [] }) {
           </div>
         </div>
         <div className='mt-16'>
-          <h1 className='text-xl font-bold'>Projects</h1>
+          <h1 className='text-xl font-semibold'>Projects</h1>
           <div className='my-6 space-y-4'>
             <ProjectsList items={projects} />
           </div>
@@ -65,7 +65,7 @@ export default function Home ({ blogs = [], projects = [] }) {
           </Link>
         </div>
         <div className='mt-16'>
-          <h1 className='text-xl font-bold'>Blog</h1>
+          <h1 className='text-xl font-semibold'>Blog</h1>
           <div className='my-6 space-y-4'>
             <BlogList items={blogs} />
           </div>

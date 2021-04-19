@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import Moment from 'react-moment'
+
+import BlogList from '@/components/blog/blog-list'
 
 import { getAllPosts } from '@/lib/api'
 
@@ -16,20 +16,12 @@ export default function Writings ({ posts = [] }) {
       <Header />
 
       <main className='max-w-screen-sm mx-auto px-4'>
-        <div className='mt-16'>
-          <h1 className='text-xl font-bold'>Blog</h1>
-          <div className='my-6 space-y-4'>
-            {posts.map((post, i) => (
-              <Link href='/blog/[slug]' as={`/blog/${post.slug}`} key={i}>
-                <a className='block'>
-                  <div>
-                    <h1 className='font-semibold'>{post.title}</h1>
-                    <p className='mt-1 text-sm text-gray-600'>{post.subtitle}</p>
-                    <p className='mt-1.5 text-sm text-gray-400'><Moment format='YYYY-MM-DD HH:mm'>{post.date}</Moment></p>
-                  </div>
-                </a>
-              </Link>
-            ))}
+        <div className='mt-10 sm:mt-16'>
+          <div>
+            <h1 className='text-xl font-semibold'>Blog</h1>
+            <div className='my-8 space-y-4'>
+              <BlogList items={posts} />
+            </div>
           </div>
         </div>
       </main>
