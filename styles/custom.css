@@ -46,4 +46,21 @@ html, body, #__next {
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+
+  .blog-cover {
+    width: 100%;
+    height: 100%;
+    max-height: 240px;
+    object-fit: cover;
+  }
+  @media (min-width: 640px) {
+    .blog-cover {
+      max-height: 400px;
+    }
+  }
+  @media (min-width: 768px) {
+    .blog-cover {
+      max-height: 480px;
+    }
+  }
 }

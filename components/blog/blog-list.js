@@ -10,7 +10,7 @@ export default function BlogList ({ items }) {
             <div>
               <h1 className='font-medium'>{item.title}</h1>
               <p className='mt-1 text-sm text-gray-600 word-clamp'>{item.subtitle}</p>
-              <p className='mt-1.5 text-sm text-gray-500'><Moment format='YYYY-MM-DD HH:mm'>{item.date}</Moment>・Diary</p>
+              <p className='mt-1.5 text-sm text-gray-500'><Moment format='YYYY-MM-DD HH:mm'>{item.date}</Moment></p>
             </div>
           </a>
         </Link>
