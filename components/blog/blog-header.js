@@ -1,9 +1,7 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import Moment from 'react-moment'
 
-export default function Blogeader({ title, coverImage, date }) {
-  const router = useRouter()
+export default function Blogeader ({ title, coverImage, date }) {
   return (
     <>
       <Link href='/blog'>

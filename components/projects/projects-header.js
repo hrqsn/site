@@ -1,8 +1,6 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 
-export default function ProjectsHeader({ title, url }) {
-  const router = useRouter()
+export default function ProjectsHeader ({ title, url }) {
   return (
     <>
       <Link href='/projects'>

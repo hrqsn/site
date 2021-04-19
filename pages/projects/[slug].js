@@ -28,9 +28,9 @@ export default function Project ({ post }) {
           title={post.title}
           url={post.url}
         />
-        <ProjectsBody 
+        <ProjectsBody
           coverImage={post.coverImage}
-          content={post.content} 
+          content={post.content}
         />
       </article>
 
@@ -39,14 +39,14 @@ export default function Project ({ post }) {
   )
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps ({ params }) {
   const post = getPostBySlug('projects', params.slug, [
     'title',
     'slug',
     'content',
     'url',
     'ogImage',
-    'coverImage',
+    'coverImage'
   ])
   const content = await markdownToHtml(post.content || '')
 
@@ -54,23 +54,23 @@ export async function getStaticProps({ params }) {
     props: {
       post: {
         ...post,
-        content,
-      },
-    },
+        content
+      }
+    }
   }
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths () {
   const posts = getAllPosts('projects', ['slug'])
 
   return {
     paths: posts.map((post) => {
       return {
         params: {
-          slug: post.slug,
-        },
+          slug: post.slug
+        }
       }
     }),
-    fallback: false,
+    fallback: false
   }
 }

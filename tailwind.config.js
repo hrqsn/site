@@ -8,7 +8,7 @@ module.exports = {
       lg: ['20px', '28px'],
       xl: ['24px', '32px'],
       '2xl': ['32px', '40px'],
-      '4xl': ['40px', '48px'],
+      '4xl': ['40px', '48px']
     },
     extend: {
       typography: {
@@ -19,16 +19,16 @@ module.exports = {
             },
             'code::after': {
               content: '""'
-            },
-          },
-        },
-      },
+            }
+          }
+        }
+      }
     }
   },
   variants: {
     extend: {}
   },
   plugins: [
-    require('@tailwindcss/typography'),
+    require('@tailwindcss/typography')
   ]
 }

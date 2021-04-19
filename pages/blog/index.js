@@ -44,7 +44,7 @@ export async function getStaticProps () {
     'slug',
     'title',
     'subtitle',
-    'date',
+    'date'
   ])
 
   return {

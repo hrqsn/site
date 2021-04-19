@@ -33,7 +33,7 @@ export async function getStaticProps () {
     'title',
     'subtitle',
     'date',
-    'slug',
+    'slug'
   ])
 
   return {
@@ -42,4 +42,3 @@ export async function getStaticProps () {
     }
   }
 }
-

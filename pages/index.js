@@ -74,7 +74,7 @@ export default function Home ({ blogs = [], projects = [] }) {
           </Link>
         </div>
       </main>
-      
+
       <Footer />
     </>
   )
@@ -85,13 +85,13 @@ export async function getStaticProps () {
     'title',
     'subtitle',
     'date',
-    'slug',
+    'slug'
   ])
   const recentProjects = await getRecentPosts('projects', [
     'title',
     'subtitle',
     'date',
-    'slug',
+    'slug'
   ])
 
   return {
