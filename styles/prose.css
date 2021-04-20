@@ -15,7 +15,7 @@
 }
 
 .prose a {
-  @apply text-blue-700;
+  color: #113485;
 }
 
 .prose table {

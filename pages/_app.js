@@ -1,8 +1,9 @@
 import Router, { useRouter } from 'next/router'
 import NProgress from 'nprogress'
 import Providers from '@/components/providers'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import * as gtag from '@/lib/gtag'
+import Cursor from '@/components/cursor'
 
 import '@/styles/tailwind.css'
 import 'tailwindcss/utilities.css'
@@ -37,8 +38,33 @@ function Site ({ Component, pageProps }) {
     }
   }, [router.events])
 
+  useEffect(() => {
+    const detectDeviceType = (e) => {
+      let deviceType = e.changedTouches ? 1 : 2
+      const body = document.getElementsByTagName('body')
+      console.log(deviceType)
+      if (deviceType === 1) {
+        // タッチデバイス
+        body[0].classList.remove('is-normal')
+        body[0].classList.add('is-mobile')
+      } else {
+        // マウスデバイス
+        body[0].classList.add('is-normal')
+        body[0].classList.remove('is-mobile')
+      }
+
+      document.removeEventListener('touchstart', detectDeviceType)
+      document.removeEventListener('mousemove', detectDeviceType)
+    }
+    document.addEventListener('touchstart', detectDeviceType)
+    document.addEventListener('mousemove', detectDeviceType)
+  }, [])
+
+
   return (
     <Providers>
+      <Cursor />
+      {/* <img src='/img/lap.png' className='fixed w-16 h-16 bottom-12 right-12' /> */}
       <Component {...pageProps} />
     </Providers>
   )

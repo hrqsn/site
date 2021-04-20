@@ -23,6 +23,9 @@ module.exports = {
             }
           }
         }
+      },
+      colors: {
+        primary: '#113485'
       }
     }
   },

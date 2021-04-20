@@ -16,9 +16,17 @@ export default function Writings ({ posts = [] }) {
       <Header />
 
       <main className='max-w-screen-sm mx-auto px-4'>
-        <div className='mt-10 sm:mt-16'>
+        <div className='mt-8 sm:mt-12'>
           <div>
-            <h1 className='text-xl font-semibold'>Blog</h1>
+            <figure className='sm:-mx-16'>
+              <section className='line-animation-wrapper rounded-md'>
+                <div className='line-animation-inner'>
+                  <div className='w-full h-full flex items-center justify-center'>
+                    <h1 className='text-2xl font-bold line-anim-word'>Blog</h1>
+                  </div>
+                </div>
+              </section>
+            </figure>
             <div className='my-8 space-y-4'>
               <BlogList items={posts} />
             </div>
