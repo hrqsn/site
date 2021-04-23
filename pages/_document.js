@@ -27,6 +27,7 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <div class="c-lap-container" data-lap-id="JRcujefaG84QBR8v-rjT_" data-lap-bg="FFFFFF" data-lap-color="113485" data-lap-textColor="113485"><script src="https://storage.googleapis.com/halsakuragi/lap/1.0.0/widget.min.js"></script></div>
         </body>
       </Html>
     )

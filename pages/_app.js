@@ -42,7 +42,7 @@ function Site ({ Component, pageProps }) {
     const detectDeviceType = (e) => {
       let deviceType = e.changedTouches ? 1 : 2
       const body = document.getElementsByTagName('body')
-      console.log(deviceType)
+      
       if (deviceType === 1) {
         // タッチデバイス
         body[0].classList.remove('is-normal')
@@ -64,7 +64,6 @@ function Site ({ Component, pageProps }) {
   return (
     <Providers>
       <Cursor />
-      {/* <img src='/img/lap.png' className='fixed w-16 h-16 bottom-12 right-12' /> */}
       <Component {...pageProps} />
     </Providers>
   )

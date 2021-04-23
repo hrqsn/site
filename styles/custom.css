@@ -129,8 +129,6 @@
 
   .cursor.is-active {
     display: none;
-    width: 6px;
-    height: 6px;
   }
   .follower.is-active {
     width: 64px;
