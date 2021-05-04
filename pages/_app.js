@@ -3,7 +3,6 @@ import NProgress from 'nprogress'
 import Providers from '@/components/providers'
 import { useEffect, useState } from 'react'
 import * as gtag from '@/lib/gtag'
-import Cursor from '@/components/cursor'
 
 import '@/styles/tailwind.css'
 import 'tailwindcss/utilities.css'
@@ -38,6 +37,7 @@ function Site ({ Component, pageProps }) {
     }
   }, [router.events])
 
+  /**
   useEffect(() => {
     const detectDeviceType = (e) => {
       let deviceType = e.changedTouches ? 1 : 2
@@ -59,11 +59,10 @@ function Site ({ Component, pageProps }) {
     document.addEventListener('touchstart', detectDeviceType)
     document.addEventListener('mousemove', detectDeviceType)
   }, [])
-
+  */
 
   return (
     <Providers>
-      <Cursor />
       <Component {...pageProps} />
     </Providers>
   )
